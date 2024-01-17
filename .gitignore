@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual Environment
+venv/
+
+# VS Code settings
+.vscode/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
