@@ -18,7 +18,7 @@ def get_6m_stations_list(id_departement: int) -> str:
         raise ValueError("API_TOKEN not found in environment variables.")
     
     request_url = BASIC_URL + "liste-stations/infrahoraire-6m"
-    headers = {"accept": "*/*", "apikey": ""}
+    headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-departement": id_departement}
 
     response = requests.get(request_url, params=params, headers=headers)
@@ -36,7 +36,7 @@ def get_hourly_stations_list(id_departement: int) -> str:
         raise ValueError("API_TOKEN not found in environment variables.")
     
     request_url = BASIC_URL + "liste-stations/horaire"
-    headers = {"accept": "*/*", "apikey": ""}
+    headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-departement": id_departement}
 
     response = requests.get(request_url, params=params, headers=headers)
@@ -54,7 +54,7 @@ def get_daily_stations_list(id_departement: int) -> str:
         raise ValueError("API_TOKEN not found in environment variables.")
     
     request_url = BASIC_URL + "liste-stations/quotidienne"
-    headers = {"accept": "*/*", "apikey": ""}
+    headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-departement": id_departement}
 
     response = requests.get(request_url, params=params, headers=headers)
@@ -72,7 +72,7 @@ def get_station_info(id_station: str) -> str:
         raise ValueError("API_TOKEN not found in environment variables.")
     
     request_url = BASIC_URL + "information-station"
-    headers = {"accept": "*/*", "apikey": ""}
+    headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-station": id_station}
 
     response = requests.get(request_url, params=params, headers=headers)
