@@ -7,7 +7,7 @@ import os
 import requests
 from dotenv import load_dotenv
 
-from stations import BASIC_URL
+from config import BASIC_URL
 
 
 def get__station_info_6m(id_station: str, start_date: str, end_date: str) -> str:

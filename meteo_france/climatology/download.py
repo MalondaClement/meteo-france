@@ -7,7 +7,7 @@ import os
 import aiohttp
 from dotenv import load_dotenv
 
-from stations import BASIC_URL
+from config import BASIC_URL
 
 async def get_file(id_cmd: int) -> str:
     load_dotenv()

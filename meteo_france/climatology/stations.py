@@ -7,8 +7,10 @@ import os
 import requests
 from dotenv import load_dotenv
 
+from .config import BASIC_URL
 
-BASIC_URL = "https://public-api.meteofrance.fr/public/DPClim/v1/"
+
+# BASIC_URL = "https://public-api.meteofrance.fr/public/DPClim/v1/"
 
 def get_6m_stations_list(id_departement: int) -> str:
     load_dotenv()
