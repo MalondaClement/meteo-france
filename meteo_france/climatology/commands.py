@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 from config import BASIC_URL
 
 
-def get__station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
+def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
     load_dotenv()
     api_token = os.getenv("API_TOKEN")
 
@@ -28,7 +28,7 @@ def get__station_info_6m(id_station: str, start_date: str, end_date: str) -> str
     else:
         response.raise_for_status()
 
-def get__station_info_hourly(id_station: str, start_date: str, end_date: str) -> str:
+def get_station_info_hourly(id_station: str, start_date: str, end_date: str) -> str:
     load_dotenv()
     api_token = os.getenv("API_TOKEN")
 
@@ -46,7 +46,7 @@ def get__station_info_hourly(id_station: str, start_date: str, end_date: str) ->
     else:
         response.raise_for_status()
 
-def get__station_info_daily(id_station: str, start_date: str, end_date: str) -> str:
+def get_station_info_daily(id_station: str, start_date: str, end_date: str) -> str:
     load_dotenv()
     api_token = os.getenv("API_TOKEN")
 
