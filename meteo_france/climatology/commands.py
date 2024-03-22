@@ -7,7 +7,7 @@ import os
 import requests
 from dotenv import load_dotenv
 
-from config import BASIC_URL
+from .config import BASIC_URL
 
 
 def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
@@ -23,7 +23,7 @@ def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
 
     response = requests.get(request_url, params=params, headers=headers)
 
-    if response.status_code == 200:
+    if response.status_code == 202:
         return response.json()
     else:
         response.raise_for_status()
@@ -41,7 +41,7 @@ def get_station_info_hourly(id_station: str, start_date: str, end_date: str) -> 
 
     response = requests.get(request_url, params=params, headers=headers)
 
-    if response.status_code == 200:
+    if response.status_code == 202:
         return response.json()
     else:
         response.raise_for_status()
@@ -59,7 +59,7 @@ def get_station_info_daily(id_station: str, start_date: str, end_date: str) -> s
 
     response = requests.get(request_url, params=params, headers=headers)
 
-    if response.status_code == 200:
+    if response.status_code == 202:
         return response.json()
     else:
         response.raise_for_status()
