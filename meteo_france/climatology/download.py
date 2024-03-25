@@ -25,4 +25,15 @@ async def get_file(id_cmd: int) -> str:
             if response.status == 201:
                 return await response.text()
             else:
-                print(response.status)
+                if response.status == 204:
+                    print(f"Status {response.status} : Production still pending or in progress")
+                elif response.status == 404:
+                    print(f"Status {response.status} : Command number does not exist")
+                elif response.status == 410:
+                    print(f"Status {response.status} : Production already delivered")
+                elif response.status == 500:
+                    print(f"Status {response.status} : Production completed, failure")
+                elif response.status == 507:
+                    print(f"Status {response.status} : Production rejected by the system (too large)")
+                else:
+                    print(f"Status {response.status}")
