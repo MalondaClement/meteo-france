@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 
 from .config import BASIC_URL
 
-
 def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
     load_dotenv()
     api_token = os.getenv("API_TOKEN")
@@ -17,7 +16,7 @@ def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
-    request_url = BASIC_URL + "commande-station/infrahoraire-6m"
+    request_url = BASIC_URL + "/commande-station/infrahoraire-6m"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-station": id_station, "date-deb-periode": start_date, "date-fin-periode": end_date}
 
@@ -35,7 +34,7 @@ def get_station_info_hourly(id_station: str, start_date: str, end_date: str) -> 
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
 
-    request_url = BASIC_URL + "commande-station/horaire"
+    request_url = BASIC_URL + "/commande-station/horaire"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-station": id_station, "date-deb-periode": start_date, "date-fin-periode": end_date}
 
@@ -53,7 +52,7 @@ def get_station_info_daily(id_station: str, start_date: str, end_date: str) -> s
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
-    request_url = BASIC_URL + "commande-station/quotidienne"
+    request_url = BASIC_URL + "/commande-station/quotidienne"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-station": id_station, "date-deb-periode": start_date, "date-fin-periode": end_date}
 

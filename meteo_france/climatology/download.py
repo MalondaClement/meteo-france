@@ -13,7 +13,7 @@ async def get_file(id_cmd: int) -> str:
     load_dotenv()
     api_token = os.getenv("API_TOKEN")
 
-    request_url = BASIC_URL + "commande/fichier"
+    request_url = BASIC_URL + "/commande/fichier"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-cmde": id_cmd}
 

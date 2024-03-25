@@ -9,9 +9,6 @@ from dotenv import load_dotenv
 
 from .config import BASIC_URL
 
-
-# BASIC_URL = "https://public-api.meteofrance.fr/public/DPClim/v1/"
-
 def get_6m_stations_list(id_departement: int) -> str:
     load_dotenv()
     api_token = os.getenv("API_TOKEN")
@@ -19,7 +16,7 @@ def get_6m_stations_list(id_departement: int) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
-    request_url = BASIC_URL + "liste-stations/infrahoraire-6m"
+    request_url = BASIC_URL + "/liste-stations/infrahoraire-6m"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-departement": id_departement}
 
@@ -37,7 +34,7 @@ def get_hourly_stations_list(id_departement: int) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
-    request_url = BASIC_URL + "liste-stations/horaire"
+    request_url = BASIC_URL + "/liste-stations/horaire"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-departement": id_departement}
 
@@ -55,7 +52,7 @@ def get_daily_stations_list(id_departement: int) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
-    request_url = BASIC_URL + "liste-stations/quotidienne"
+    request_url = BASIC_URL + "/liste-stations/quotidienne"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-departement": id_departement}
 
@@ -73,7 +70,7 @@ def get_station_info(id_station: str) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
-    request_url = BASIC_URL + "information-station"
+    request_url = BASIC_URL + "/information-station"
     headers = {"accept": "*/*", "apikey": api_token}
     params = {"id-station": id_station}
 
