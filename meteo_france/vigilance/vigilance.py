@@ -36,10 +36,48 @@ def get_vigilance_map(api_token: str) -> str:
         response.raise_for_status()
 
 def get_vigilance_image_J(api_token: str):
-    pass
+    if not api_token:
+        raise ValueError("Missing API token")
+
+    request_url = BASIC_URL + ""
+    headers = {"accept": "*/*", "apikey": api_token}
+
+    response = requests.get(request_url, headers=headers)
+
+    if response.status_code == 200:
+        img = response.raw
+        return img
+    else:
+        response.raise_for_status()
+
 
 def get_vigilance_image_J1(api_token: str):
-    pass
+    if not api_token:
+        raise ValueError("Missing API token")
+
+    request_url = BASIC_URL + ""
+    headers = {"accept": "*/*", "apikey": api_token}
+
+    response = requests.get(request_url, headers=headers)
+
+    if response.status_code == 200:
+        img = response.raw
+        return img
+    else:
+        response.raise_for_status()
+
 
 def get_vigilance_image_J_J1(api_token: str):
-    pass
+    if not api_token:
+        raise ValueError("Missing API token")
+
+    request_url = BASIC_URL + ""
+    headers = {"accept": "*/*", "apikey": api_token}
+
+    response = requests.get(request_url, headers=headers)
+
+    if response.status_code == 200:
+        img = response.raw
+        return img
+    else:
+        response.raise_for_status()
