@@ -9,10 +9,7 @@ from dotenv import load_dotenv
 
 from .config import BASIC_URL
 
-def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
-    load_dotenv()
-    api_token = os.getenv("API_TOKEN")
-
+def get_station_info_6m(id_station: str, start_date: str, end_date: str, api_token: str) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
@@ -27,10 +24,7 @@ def get_station_info_6m(id_station: str, start_date: str, end_date: str) -> str:
     else:
         response.raise_for_status()
 
-def get_station_info_hourly(id_station: str, start_date: str, end_date: str) -> str:
-    load_dotenv()
-    api_token = os.getenv("API_TOKEN")
-
+def get_station_info_hourly(id_station: str, start_date: str, end_date: str, api_token: str) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
 
@@ -45,10 +39,7 @@ def get_station_info_hourly(id_station: str, start_date: str, end_date: str) -> 
     else:
         response.raise_for_status()
 
-def get_station_info_daily(id_station: str, start_date: str, end_date: str) -> str:
-    load_dotenv()
-    api_token = os.getenv("API_TOKEN")
-
+def get_station_info_daily(id_station: str, start_date: str, end_date: str, api_token: str) -> str:
     if not api_token:
         raise ValueError("API_TOKEN not found in environment variables.")
     
