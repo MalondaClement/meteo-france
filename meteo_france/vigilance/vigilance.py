@@ -50,7 +50,6 @@ def get_vigilance_image_J(api_token: str):
     else:
         response.raise_for_status()
 
-
 def get_vigilance_image_J1(api_token: str):
     if not api_token:
         raise ValueError("Missing API token")
@@ -65,7 +64,6 @@ def get_vigilance_image_J1(api_token: str):
         return img
     else:
         response.raise_for_status()
-
 
 def get_vigilance_image_J_J1(api_token: str):
     if not api_token:
