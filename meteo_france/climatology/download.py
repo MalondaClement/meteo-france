@@ -3,9 +3,7 @@
 #
 #  Created by Clément Malonda on 23/01/2024.
 
-import os
 import aiohttp
-from dotenv import load_dotenv
 
 from .config import BASIC_URL
 
